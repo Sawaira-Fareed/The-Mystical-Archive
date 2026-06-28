@@ -160,7 +160,32 @@ UI and UX prototype:
 **https://www.figma.com/make/Knf6tVyJlL5aGQCXQX4VxA/Mystical-Archive-UI-UX-Design?p=f**
 
 ---
+## Documentation
 
+Comprehensive project documentation, including the **Software Requirements Specification (SRS)**, research, UI/UX process, wireframes, user personas, and design decisions, is available below.
+
+**Google Docs (Online):**  
+https://docs.google.com/document/d/1jGXe849szFUc61D7Gm3jd7rabXifdYX9JTPgT8o0WDE/edit?usp=sharing
+
+**Repository Copy:**  
+[📄 Mystical_Archive_SRS.pdf](Mystical_Archive_SRS.pdf)
+
+The documentation covers:
+
+- Project Vision and Objectives
+- User Research and Personas
+- Empathy Map
+- Problem Statement and Proposed Solution
+- Functional & Non-Functional Requirements
+- UI/UX Design Process
+- Wireframes and Design Artifacts
+- User Flows
+- Information Architecture
+- Future Scope
+- Complete Software Requirements Specification (SRS)
+
+---
+  
 ## Future Enhancements
 
 Potential future improvements include:
@@ -209,6 +234,11 @@ This project was developed as part of learning journey.
 The concept is inspired by the importance of preserving world folklore, mythology, oral traditions, and cultural heritage through thoughtful digital experiences that combine storytelling with modern web technologies.
 
 ---
+## License
+
+This project is licensed under the **MIT License**.
+
+© 2026 Sawaira Fareed
 
 <div align="center">
 

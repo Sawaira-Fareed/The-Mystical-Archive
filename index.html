@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Mystical Archive</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:wght@400;600;700&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+       <svg xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink" 
+     aria-hidden="true" 
+     role="img" 
+     width="32" 
+     height="32" 
+     viewBox="0 0 24 24" 
+     style="color: #B8913D;">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+        <path d="M2.5 4.5h-2v17h8l3 2l3-2h8v-17h-2m-9 0V21"></path>
+        <path d="M14.5 2.5v6l2-2l2 2v-6"></path>
+        <path d="m11.5 21l2.25-1.5h6.75v-17h-6l-3 2l-3-2h-6v17h6.75z"></path>
+    </g>
+</svg>
+                <span class="nav-title">The Mystical Archive</span>
+            </div>
+
+            <div class="nav-links">
+                <button class="nav-link active" data-page="home">Archive</button>
+     <button class="nav-link" data-page="favorites">Favorites</button>
+                <button class="nav-link" data-page="submit">Submit a Tale</button>
+            </div>
+
+            <div class="nav-actions">
+                <button class="nav-menu" id="hamburger">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 6H20" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M4 12H20" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M4 18H20" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="mobile-link" data-page="home">Archive</button>
+            <button class="mobile-link" data-page="favorites">Favorites</button>
+            <button class="mobile-link" data-page="submit">Submit a Tale</button>
+        </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-tagline">A Digital Grimoire of Human Memory</div>
+            <h1 class="hero-title">The Mystical<br><em>Archive</em></h1>
+            <p class="hero-subtitle">A living repository of folklore, myth, and legend from every corner of the world. Where ancient voices are preserved in candlelight and every scroll holds a secret.</p>
+            <div class="hero-bottom">
+                <a href="#archive" class="btn-primary">Enter the Archive</a>
+                <span class="hero-count"><span id="totalStories">0</span> tales preserved</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <!-- ===== EXPLORE / ARCHIVE SECTION ===== -->
+    <section class="explore" id="archive">
+        <div class="explore-container">
+            <aside class="side-panel" id="sidePanel">
+                <div class="panel-section">
+                    <div class="panel-title">Search the Vaults</div>
+                    <div class="search-wrapper">
+                        <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <circle cx="7" cy="7" r="5.5" stroke="rgba(176,141,87,0.4)" stroke-width="1.2"/>
+                            <path d="M11 11L14.5 14.5" stroke="rgba(176,141,87,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                        </svg>
+                        <input type="text" class="search-input" id="searchInput" placeholder="Seek a legend…" />
+                    </div>
+                </div>
+
+                <div class="panel-section filter-section">
+                    <button class="filter-toggle" data-target="cultureFilter">
+                        <span>Culture</span>
+                        <svg class="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M2 4L6 8L10 4" stroke="rgba(176,141,87,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="filter-content" id="cultureFilter">
+                        <div class="filter-group" id="cultureFilters"></div>
+                    </div>
+                </div>
+
+                <div class="panel-section filter-section">
+                    <button class="filter-toggle" data-target="themeFilter">
+                        <span>Themes</span>
+                        <svg class="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M2 4L6 8L10 4" stroke="rgba(176,141,87,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="filter-content" id="themeFilter">
+                        <div class="filter-group" id="themeFilters"></div>
+                    </div>
+                </div>
+
+   <div class="panel-section">
+    <button class="btn-random" id="randomBtn" style="display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%;">
+        <svg width="20" height="20" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M400 304L448 352L400 400"/>
+            <path d="M400 112L448 160L400 208"/>
+            <path d="M64 352H149.19C189.09 352 225.76 329.85 246.56 295.62L256 280"/>
+            <path d="M64 160H149.19C189.09 160 225.76 182.15 246.56 216.38L327.06 337.12C347.86 371.35 384.53 393.52 424.43 393.52H448"/>
+            <path d="M448 118.48H424.43C384.53 118.48 347.86 140.65 327.06 174.88L288 240"/>
+        </svg>
+        Open the Vault
+    </button>
+    <div class="story-count" id="storyCount">0 tales</div>
+</div>
+
+                <div class="panel-section">
+                    <div class="panel-title">Featured Tale</div>
+                    <div class="featured-card" id="featuredCard">
+                        <div class="img-wrap">
+                            <img id="featuredImg" src="" alt="" />
+                            <span class="label" id="featuredLabel"></span>
+                        </div>
+                        <div class="body">
+                            <h4 id="featuredTitle">Loading...</h4>
+                            <p id="featuredExcerpt"></p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="story-grid-wrap">
+                <div class="grid-header">
+                    <h2>Tales of the World</h2>
+                    <span class="count" id="gridCount">0 tales</span>
+                </div>
+                <div class="story-grid" id="storyGrid"></div>
+            </main>
+        </div>
+    </section>
+
+    <!-- ===== SUBMIT PAGE ===== -->
+    <section class="submit-page" id="submitPage" style="display:none;">
+        <div class="header">
+            <div class="icon">🪶</div>
+            <h1>Submit a Tale</h1>
+            <p>Contribute to the living record of human mythology.</p>
+        </div>
+
+        <form class="submit-form" id="submitForm">
+            <div class="form-divider">
+                <div class="line"></div>
+                <span>The Inscription</span>
+                <div class="line"></div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Title of the Tale</label>
+                    <input type="text" id="sTitle" placeholder="The Serpent's Oath…" required />
+                </div>
+                <div class="form-group">
+                    <label>Cultural Origin</label>
+                    <input type="text" id="sCulture" placeholder="Norse, Japanese, Yoruba…" required />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Historical Era</label>
+                    <input type="text" id="sEra" placeholder="Viking Age, Tang Dynasty…" />
+                </div>
+                <div class="form-group">
+                    <label>Themes (comma-separated)</label>
+                    <input type="text" id="sThemes" placeholder="Death, Trickery, Water…" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Excerpt (1–2 sentences)</label>
+                <textarea id="sExcerpt" rows="2" placeholder="A brief, evocative glimpse into the tale…" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>The Full Tale</label>
+                <textarea id="sContent" rows="10" placeholder="Write the full story here…" required></textarea>
+            </div>
+
+            <div class="form-divider">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+             <button type="submit" class="btn-submit" style="width: auto; min-width: 250px; padding: 14px 36px; display: flex; align-items: center; justify-content: center; gap: 12px;">
+        <span>Inscribe to the Archive</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 2L11 13"/>
+    <path d="M22 2L15 22L11 13L2 9L22 2Z"/>
+</svg>
+    </button>
+        </form>
+
+        <div class="submit-success" id="submitSuccess" style="display:none;">
+            <div class="icon">🕯️</div>
+            <h2>Your tale is inscribed</h2>
+            <p>The Archive keepers will review your submission.</p>
+        </div>
+    </section>
+
+    <!-- ===== FAVORITES PAGE ===== -->
+    <section class="favorites-page" id="favoritesPage" style="display:none;">
+        <div class="header">
+            <div class="label">Your Collection</div>
+            <h1>Preserved Tales</h1>
+            <div class="sub" id="favCount">0 stories in your vault</div>
+        </div>
+        <div class="story-grid" id="favoritesGrid"></div>
+        <div class="empty-state" id="favEmpty">
+            <div class="icon">📖</div>
+            <h3>Your vault is empty</h3>
+            <p>Bookmark tales from the Archive to preserve them here.</p>
+        </div>
+    </section>
+
+    <!-- ===== STORY MODAL ===== -->
+    <div class="modal-overlay" id="storyModal">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose">✕</button>
+            <img class="modal-image" id="modalImage" src="" alt="" />
+            <div class="modal-body" id="modalBody">
+                <div class="meta-row">
+                    <span class="badge" id="modalCulture">Culture</span>
+                    <span class="era" id="modalEra">Era</span>
+                    <button class="save-btn" id="modalSaveBtn">♡ Preserve Tale</button>
+                </div>
+                <h2 id="modalTitle">Title</h2>
+                <div class="story-text" id="modalContent"></div>
+                <div class="tags-row" id="modalTags"></div>
+            </div>
+        </div>
+    </div>
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h3>The Mystical Archive</h3>
+            <p>A living digital library preserving folklore across every age.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigate</h4>
+            <button data-page="home">The Archive</button>
+            <button data-page="submit">Submit a Tale</button>
+            <button data-page="favorites">Preserved Tales</button>
+        </div>
+        <div class="footer-col">
+            <h4>Traditions</h4>
+            <div id="footerCultures"></div>
+        </div>
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="https://github.com/Sawaira-Fareed" target="_blank" rel="noopener noreferrer" class="footer-link">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;">
+                    <path d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" fill="rgba(176,141,87,0.6)"/>
+                </svg>
+                GitHub
+            </a>
+            <a href="mailto:sawairafareed4@gmail.com" class="footer-link">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;">
+                    <path d="M2 3H14C14.55 3 15 3.45 15 4V12C15 12.55 14.55 13 14 13H2C1.45 13 1 12.55 1 12V4C1 3.45 1.45 3 2 3Z" stroke="rgba(176,141,87,0.6)" stroke-width="1.2" stroke-linejoin="round"/>
+                    <path d="M1 4L8 8.5L15 4" stroke="rgba(176,141,87,0.6)" stroke-width="1.2" stroke-linejoin="round"/>
+                </svg>
+                Email
+            </a>
+            <p style="font-size:0.7rem;color:rgba(155,139,114,0.4);margin-top:10px;font-family:'Lora',serif;">
+                Built with ❤️ for DecodeLabs
+            </p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>᛫ MMXXVI · The Mystical Archive ᛫</span>
+        <span>"In stories we are all immortal."</span>
+    </div>
+</footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
